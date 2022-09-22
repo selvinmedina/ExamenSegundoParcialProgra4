@@ -1,0 +1,49 @@
+﻿@model ExamenSelvinMedina.Infrastucture.Universidad.MaestroExamen
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edición</h1>
+
+<h4>Maestro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" id="frmEditar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ncuenta" />
+            <div class="form-group">
+                <label asp-for="NombreCompleto" class="control-label"></label>
+                <input asp-for="NombreCompleto" class="form-control" />
+                <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profesion" class="control-label"></label>
+                <input asp-for="Profesion" class="form-control" />
+                <span asp-validation-for="Profesion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrera" class="control-label"></label>
+                <input asp-for="Carrera" class="form-control" />
+                <span asp-validation-for="Carrera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input asp-for="Edad" class="form-control" />
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="button" id="btnEditar" value="Editar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-default">Regresar a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
